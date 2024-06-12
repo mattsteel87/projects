@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Result</title>
+    <link rel="icon" type="image/x-icon" href="/static/images/favicon.png">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}" type="text/css"/>
+  </head>
+  <body>
+    <div class="testbox1">
+      <form action="/predict" method="POST" target="_blank">
+        <div class="banner">
+          <h1>Prediction Result</h1>
+        </div>
+        <h2 style="text-align: center;"> Given the information on the form, this is the prediction of whether you will get cancer. </h2>
+
+        <div class="prediction_res">
+          <div class="thumbnail">
+            {% if prediction [0]== 0 %}
+            <h3>You will not get cancer!</h3>
+            <img src="static/images/happyface.jpeg" class="emoji" />
+            <div class = "recomendations">
+              <h2 style="text-align: center;" class= "recom">Stay healthy</h2>
+              <h2 style="text-align: center;" class= "recom">Long live you!</h2>
+            </div>
+            {% endif %}
+          </div>
+          <div class="thumbnail">
+            {% if prediction[0] == 1 %}
+            <h3>Sorry!</h3>
+            <img src="static/images/sadface.png" class="emoji" />
+            <div class = "recomendations">
+                <h2 style="text-align: center;" class= "recom">You will probably get cancer</h2>
+                <h2 style="text-align: center;" class= "recom">Go see a doctor!</h2>
+            </div>
+            {% endif %}
+          </div>
+        </div>
+      </form>
+    </div>
+    
+  </body>
+</html>

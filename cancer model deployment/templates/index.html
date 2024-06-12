@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cancer Prediction Form</title>
+    <link rel="icon" type="image/x-icon" href="/static/images/favicon.png">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styling.css') }}" type="text/css"/>
+  </head>
+  <body>
+    <div class="testbox">
+      <form action="/predict" method="POST" target="_blank">
+        <div class="banner">
+          <h1>Cancer Prediction Form</h1>
+        </div>
+        <h2 style="text-align: center;">  Fill out following form to predict whether you will get cancer </h2>
+
+        <div class="item">
+          <label for="course_length">Age</label>
+          <input type="number" id="age" name="Age">  Enter your age in whole years
+        </div>
+
+        <div class="item">
+          <label for="gender">Gender</label>
+          <select id="gender" name="Gender">
+            <option disabled selected value> -- select an option -- </option>
+            <option value=0>Male</option>
+            <option value=1>Female</option>
+          </select>
+        </div>
+        
+
+        <div class="item">
+          <label for="BMI">BMI</label>
+          <input type="number" id="BMI" name="BMI">  Enter your BMI
+        </div>
+
+
+      <div class="item">
+          <label for="smoking">Do you smoke?</label>
+          <select id="smoking" name="Smoking">
+            <option disabled selected value> -- select an option -- </option>
+            <option value=0>No</option>
+            <option value=1>Yes</option>
+          </select>
+        </div>
+
+        <div class="item">
+          <label for="geneticrisk">What is your genetic risk of cancer?</label>
+          <select id="geneticrisk" name="GeneticRisk">
+            <option disabled selected value> -- select an option -- </option>
+            <option value=0>Low</option>
+            <option value=1>Medium</option>
+            <option value=2>High</option>
+          </select>
+        </div>
+
+        <div class="item">
+            <label for="physicalactivity">Physical Activity</label>
+            <input type="number" id="physicalactivity" name="PhysicalActivity">  How many hours do you spend on physical activity per week?
+          </div>
+
+          <div class="item">
+            <label for="alcoholintake">Alcohol Intake</label>
+            <input type="number" id="alcoholintake" name="AlcoholIntake">  How many units of alcohol do you drink per week?
+          </div>
+
+          <div class="item">
+            <label for="cancerhistory">Have you previously been diagnosed by cancer?</label>
+            <select id="cancerhistory" name="CancerHistory">
+              <option disabled selected value> -- select an option -- </option>
+              <option value=0>No</option>
+              <option value=1>Yes</option>
+            </select>
+          </div>
+
+        <div class="btn-block">
+          <button type="submit" href="/">SUBMIT</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
